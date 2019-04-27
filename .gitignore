@@ -29,5 +29,6 @@
 
 ### project ###
 notes.txt
+*.db
 
 # End of https://www.gitignore.io/api/pycharm
