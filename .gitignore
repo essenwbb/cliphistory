@@ -28,6 +28,6 @@
 .idea/*
 
 ### project ###
-.notes.txt
+notes.txt
 
 # End of https://www.gitignore.io/api/pycharm
