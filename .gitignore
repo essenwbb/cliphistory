@@ -27,4 +27,7 @@
 # User-specific stuff
 .idea/*
 
+### project ###
+.notes.txt
+
 # End of https://www.gitignore.io/api/pycharm
