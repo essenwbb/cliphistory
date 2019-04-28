@@ -1,14 +1,25 @@
 # Cliphistory
 > Golang clipboard recorder. 
 
-## 使用方法
-```$xslt
-# TODO
-```
+
+## Requirements
+- go > 1.9
+
+## How to run by source code
+
+- ### windows
+    ```
+    go run main.go database.go
+    ```
+
+- ### linux
+    ```
+    go run *.go
+    ```
 
 ## TODO LIST
 - ### 记录模块
-    记录数据至sqllite
+    记录数据至sqllite  ok
 
 - ### web 界面
     - 浏览历史记录
