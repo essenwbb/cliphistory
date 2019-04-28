@@ -19,9 +19,10 @@ func main() {
 
 	for {
 		if ok := robotgo.AddEvents("c", "ctrl"); ok {
-			recordClipToFile()
-			//record to sqlite
-			recordClipToDatabase()
+
+			//recordClipToFile() //record to local file notes.txt
+
+			recordClipToDatabase() //record to sqlite
 		}
 	}
 }
