@@ -12,6 +12,12 @@ func init() {
 	initDatabase(db)
 }
 
+func getDatabaseHandle() (db *sql.DB) {
+	db, err := sql.Open("sqlite3", "./dataSql.db")
+	checkErr(err)
+	return
+}
+
 func checkErr(err error) {
 	if err != nil {
 		panic(err)
