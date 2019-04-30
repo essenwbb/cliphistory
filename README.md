@@ -31,6 +31,7 @@ go get github.com/go-vgo/robotgo
 
 - [x] History置顶实现
 - [x] 记录数据至sqllite
+- [ ] electronjs 编写界面
 - [ ] 多平台支持及二进制可执行文件下载
 - [ ] 热键冲突问题
 - [ ] 先进后出 连续Ctrl+v 出栈  依赖于热键冲突问题
