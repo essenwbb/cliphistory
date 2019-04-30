@@ -4,7 +4,6 @@ import (
 	"bytes"
 	"fmt"
 	"syscall"
-	"time"
 	"unsafe"
 )
 
@@ -50,9 +49,7 @@ var (
 )
 
 func Run() {
-	fmt.Println("addHotkeys")
 	addHotkeys()
-	fmt.Println("registerEvent")
 	registerEvent()
 }
 
@@ -63,6 +60,7 @@ func addHotkeys() {
 	reghotkey := user32.MustFindProc("RegisterHotKey")
 
 	// Register hotkeys:
+	fmt.Println(KeysEventMap)
 	for _, v := range KeysEventMap {
 		r1, _, err := reghotkey.Call(
 			0, uintptr(v.Hotkey.Id), uintptr(v.Hotkey.Modifiers), uintptr(v.Hotkey.KeyCode))
@@ -96,6 +94,5 @@ func registerEvent() {
 		if id := msg.WPARAM; id != 0 {
 			KeysEventMap[id].Event()
 		}
-		time.Sleep(time.Millisecond * 50)
 	}
 }
