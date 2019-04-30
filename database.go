@@ -96,6 +96,7 @@ func toppingClipById(db *sql.DB, uid int) {
 
 	_, err = res.RowsAffected()
 	checkErr(err)
+	// 更新clipboard
 }
 
 func recordClipToDatabase() {
