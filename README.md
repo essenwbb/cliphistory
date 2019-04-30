@@ -4,6 +4,16 @@
 
 ## Requirements
 - go > 1.9
+- GCC
+    - For Windows: MinGW-w64 (Use recommended) or other GCC
+
+
+
+## Installation:
+```
+go get github.com/go-vgo/robotgo
+```
+  It's that easy!
 
 ## How to run by source code
 
@@ -16,7 +26,6 @@
     ```
     go run *.go
     ```
-
 
 ## TODO list
 
