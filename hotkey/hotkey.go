@@ -59,10 +59,9 @@ func addHotkeys() {
 	reghotkey := user32.MustFindProc("RegisterHotKey")
 
 	// Register hotkeys:
-	fmt.Println(KeysEventMap)
-	for Id, v := range KeysEventMap {
+	for id, v := range KeysEventMap {
 		r1, _, err := reghotkey.Call(
-			0, uintptr(Id), uintptr(v.Hotkey.Modifiers), uintptr(v.Hotkey.KeyCode))
+			0, uintptr(id), uintptr(v.Hotkey.Modifiers), uintptr(v.Hotkey.KeyCode))
 		if r1 == 1 {
 			fmt.Println("Registered", v)
 		} else {
