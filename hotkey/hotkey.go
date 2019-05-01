@@ -15,7 +15,6 @@ const (
 )
 
 type Hotkey struct {
-	Id        int // Unique id
 	Modifiers int // Mask of modifiers
 	KeyCode   int // Key code, e.g. 'A'
 }
@@ -61,9 +60,9 @@ func addHotkeys() {
 
 	// Register hotkeys:
 	fmt.Println(KeysEventMap)
-	for _, v := range KeysEventMap {
+	for Id, v := range KeysEventMap {
 		r1, _, err := reghotkey.Call(
-			0, uintptr(v.Hotkey.Id), uintptr(v.Hotkey.Modifiers), uintptr(v.Hotkey.KeyCode))
+			0, uintptr(Id), uintptr(v.Hotkey.Modifiers), uintptr(v.Hotkey.KeyCode))
 		if r1 == 1 {
 			fmt.Println("Registered", v)
 		} else {

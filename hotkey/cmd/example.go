@@ -7,8 +7,8 @@ import (
 
 var (
 	keys = map[int16]*hotkey.HotkeyAndEvent{
-		1: {&hotkey.Hotkey{1, hotkey.ModAlt + hotkey.ModCtrl, 'O'}, test},
-		2: {&hotkey.Hotkey{2, hotkey.ModCtrl, 'V'}, test2},
+		1: {&hotkey.Hotkey{hotkey.ModAlt + hotkey.ModCtrl, 'O'}, test},
+		2: {&hotkey.Hotkey{hotkey.ModCtrl, 'V'}, test2},
 	}
 )
 
