@@ -16,7 +16,7 @@ func main() {
 	globalDb = getDatabaseHandle()
 	defer globalDb.Close()
 
-	hotkey.KeysEventMap = keys
+	hotkey.KeysEvent = keys
 	go hotkey.Run()
 
 	for {

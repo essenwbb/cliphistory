@@ -13,7 +13,7 @@ var (
 )
 
 func main() {
-	hotkey.KeysEventMap = keys
+	hotkey.KeysEvent = keys
 	hotkey.Run()
 }
 

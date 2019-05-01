@@ -44,7 +44,7 @@ type HotkeyAndEvent struct {
 }
 
 var (
-	KeysEventMap = make(map[int16]*HotkeyAndEvent)
+	KeysEvent = make(map[int16]*HotkeyAndEvent)
 )
 
 func Run() {
@@ -59,7 +59,7 @@ func addHotkeys() {
 	reghotkey := user32.MustFindProc("RegisterHotKey")
 
 	// Register hotkeys:
-	for id, v := range KeysEventMap {
+	for id, v := range KeysEvent {
 		r1, _, err := reghotkey.Call(
 			0, uintptr(id), uintptr(v.Hotkey.Modifiers), uintptr(v.Hotkey.KeyCode))
 		if r1 == 1 {
@@ -90,7 +90,7 @@ func listenEvent() {
 
 		// Registered id is in the WPARAM field:
 		if id := msg.WPARAM; id != 0 {
-			KeysEventMap[id].Event()
+			KeysEvent[id].Event()
 		}
 	}
 }
