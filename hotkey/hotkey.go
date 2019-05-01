@@ -50,7 +50,7 @@ var (
 
 func Run() {
 	addHotkeys()
-	registerEvent()
+	listenEvent()
 }
 
 func addHotkeys() {
@@ -81,7 +81,7 @@ type msg struct {
 	POINT  struct{ X, Y int64 }
 }
 
-func registerEvent() {
+func listenEvent() {
 	user32 := syscall.MustLoadDLL("user32")
 	defer user32.Release()
 	peekmsg := user32.MustFindProc("PeekMessageW")
